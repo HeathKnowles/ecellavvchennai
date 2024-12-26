@@ -164,7 +164,7 @@ const JoinUsPage = () => {
           >
             <div className="bg-white p-8 rounded-lg shadow-lg text-center">
               <h2 className="text-2xl font-bold text-blue-900 mb-4">Application Submitted!</h2>
-              <p className="text-gray-700 mb-6">Thank you for your interest in joining E-Cell Amrita. Your application has been recorded in our Google Sheet. We'll review it and get back to you soon.</p>
+              <p className="text-gray-700 mb-6">Thank you for your interest in joining E-Cell Amrita. Your application has been recorded in our Google Sheet. We&apos;ll review it and get back to you soon.</p>
               <button
                 onClick={() => setShowPopup(false)}
                 className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-colors duration-300"
