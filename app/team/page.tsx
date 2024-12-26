@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useState } from 'react'
-import { Linkedin, Mail } from 'lucide-react'
 
 const teamMembers = [
   { 
@@ -149,7 +148,7 @@ const TeamPage = () => {
           Meet Our Team
         </motion.h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {teamMembers.map((member, index) => (
+          {teamMembers.map((member) => (
             <TeamMemberCard key={member.name} member={member} />
           ))}
         </div>
