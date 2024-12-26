@@ -59,7 +59,7 @@ const ECellHomePage = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            Let's build, innovate and grow together
+            Let&apos;s build, innovate and grow together
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

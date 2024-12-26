@@ -133,7 +133,7 @@ const JoinUsPage = () => {
             <textarea 
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="notes"
-              placeholder="Any additional information you'd like to share"
+              placeholder="Any additional information you&apos;d like to share"
               name="notes"
               value={formData.notes}
               onChange={handleChange}
