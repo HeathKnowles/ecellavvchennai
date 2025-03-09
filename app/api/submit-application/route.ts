@@ -21,6 +21,11 @@ const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID!, serviceAccountAu
 export async function POST(request: Request) {
   const body = await request.json()
 
+  // Validate required fields, including the new "Contact No"
+  if (!body.name || !body.registrationNo || !body.email || !body.team || !body.contactNo) {
+    return NextResponse.json({ message: 'All fields are required' }, { status: 400 })
+  }
+
   try {
     // Load the document properties and sheets
     await doc.loadInfo()
@@ -28,12 +33,13 @@ export async function POST(request: Request) {
     // Get the first sheet
     const sheet = doc.sheetsByIndex[0]
 
-    // Append a new row
+    // Append a new row, including the contact number
     const newRow = await sheet.addRow({
       Name: body.name,
       'Registration No': body.registrationNo,
       'Email': body.email,
       'Preferred Team': body.team,
+      'Contact No': body.contactNo, // Added Contact No
       'Extra Notes': body.notes,
       'Timestamp': new Date().toISOString()
     })
@@ -47,4 +53,3 @@ export async function POST(request: Request) {
     return NextResponse.json({ message: 'Error submitting application' }, { status: 500 })
   }
 }
-
