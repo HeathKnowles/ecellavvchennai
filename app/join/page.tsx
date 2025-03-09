@@ -10,6 +10,7 @@ const JoinUsPage = () => {
     email: '',
     team: '',
     notes: '',
+    contactNo: '', // Added contactNo field
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
@@ -33,7 +34,7 @@ const JoinUsPage = () => {
       })
       if (response.ok) {
         setSubmitStatus('success')
-        setFormData({ name: '', registrationNo: '', email: '', team: '', notes: '' }) // Reset form
+        setFormData({ name: '', registrationNo: '', email: '', team: '', notes: '', contactNo: '' }) // Reset form
         setShowPopup(true)
       } else {
         setSubmitStatus('error')
@@ -104,6 +105,21 @@ const JoinUsPage = () => {
               placeholder="Your Email"
               name="email"
               value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-yellow-300 text-sm font-bold mb-2" htmlFor="contactNo">
+              Contact No
+            </label>
+            <input 
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="contactNo"
+              type="text"
+              placeholder="Your Contact Number"
+              name="contactNo"
+              value={formData.contactNo}
               onChange={handleChange}
               required
             />
@@ -180,4 +196,3 @@ const JoinUsPage = () => {
 }
 
 export default JoinUsPage
-
